@@ -6,30 +6,7 @@ image_config: &image_config
 
   IMAGE_NAME: esp32-ci
 
-  # IMAGE_TAG: $CIRCLE_SHA1
-
-  # NOTE: if you're modifying this config.yml file manually
-  # rather than using the included setup script,
-  # make sure you also add the values of your IMAGE_NAME & IMAGE_TAG variables
-  # to the `test_image` job (line 55)
-
   LINUX_VERSION: UBUNTU_XENIAL
-
-  # RUBY_VERSION_NUM: # pick a version from https://cache.ruby-lang.org/pub/ruby
-
-  # NODE_VERSION_NUM: # pick a version from https://nodejs.org/dist
-
-  PYTHON_VERSION_NUM: 3.7.0
-
-  JAVA: false
-
-  MYSQL_CLIENT: false
-
-  POSTGRES_CLIENT: false
-
-  DOCKERIZE: false
-
-  BROWSERS: false
 
 version: 2
 jobs:
@@ -41,16 +18,11 @@ jobs:
     steps:
       - checkout
 
-      # - run: bash scripts/generate.sh > Dockerfile
-
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1 .
 
       - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1 && sleep 10
-
-      - store_artifacts:
-          path: Dockerfile
 
   test_image:
     docker:
