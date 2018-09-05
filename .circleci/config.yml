@@ -32,6 +32,7 @@ jobs:
 
     steps:
       - checkout
+      - run: git --version
       - run: xtensa-esp32-elf-gcc --version
 
 
