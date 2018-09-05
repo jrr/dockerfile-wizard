@@ -47,7 +47,7 @@ jobs:
 
       - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1 .
 
-      - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG && sleep 10
+      - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1 && sleep 10
 
       - store_artifacts:
           path: Dockerfile
