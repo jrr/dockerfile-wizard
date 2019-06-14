@@ -7,7 +7,7 @@ RUN apt-get update && \
 ARG tarball=xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
 # ARG tarball=xtensa-esp32-elf-gcc8_2_0-esp32-2019r1-linux-amd64.tar.gz
 
-RUN wget $tarball
+RUN wget https://dl.espressif.com/dl/$tarball
 RUN tar xvfz $tarball
 RUN rm $tarball
 ENV PATH $PATH:$HOME/xtensa-esp32-elf/bin
