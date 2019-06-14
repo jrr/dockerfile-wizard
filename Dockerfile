@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 RUN apt-get update && \
     apt-get install -y gcc git wget make libncurses-dev flex bison gperf python python-serial openssh-client && \
