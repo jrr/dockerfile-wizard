@@ -34,6 +34,7 @@ jobs:
       - checkout
       - run: git --version
       - run: xtensa-esp32-elf-gcc --version
+      - run: cmake --version
 
 
 workflows:
