@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 RUN apt-get update && \
-    apt-get install -y gcc bison ccache cmake flex git gperf libncurses-dev make ninja-build openssh-client python python-cryptography python-future python-pip python-pyparsing python-serial python-setuptools wget && \
+    apt-get install -y gcc bison ccache flex git gperf libncurses-dev make ninja-build openssh-client python python-cryptography python-future python-pip python-pyparsing python-serial python-setuptools wget && \
     apt-get clean
 
 ARG tarball=xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
