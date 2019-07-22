@@ -35,6 +35,8 @@ jobs:
       - run: git --version
       - run: xtensa-esp32-elf-gcc --version
       - run: cmake --version
+      - run: ninja --version
+      - run: python --version
 
 
 workflows:
